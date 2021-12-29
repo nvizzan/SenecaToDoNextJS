@@ -55,7 +55,9 @@ const TodosItem = ({ todo }) => {
 							<input type="checkbox" onClick={statusChangeHandler} />
 						</label>
 					)}
-					{todo.completed && <Image width="35" height="35" src="/tick.png" />}
+					{todo.completed && (
+						<Image width="35" height="35" src="/tick.png" alt="chekced" />
+					)}
 				</div>
 				{false && (
 					<div

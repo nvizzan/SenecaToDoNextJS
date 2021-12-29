@@ -12,7 +12,7 @@ const TodosCurrent = (props) => {
 
 	return (
 		<div className={`${styles.box} box`}>
-			<h3 className={`${styles.title} title`}>Todo's List</h3>
+			<h3 className={`${styles.title} title`}>Todo&apos;s List</h3>
 			<TodosList todos={props.todos} />
 			<AddTodoForm />
 		</div>

@@ -6,7 +6,7 @@ const TodosCompleted = (props) => {
 
 	return (
 		<div className={`${styles.box} box`}>
-			<h3 className={`${styles.title} title`}>List of completed todo's</h3>
+			<h3 className={`${styles.title} title`}>List of completed todo&apos;s</h3>
 			<TodosList todos={props.todos} />
 		</div>
 	);
