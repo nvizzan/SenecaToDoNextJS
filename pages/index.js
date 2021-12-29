@@ -3,6 +3,7 @@ import { getSession, session } from "next-auth/client";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 import Todos from "../components/todos/todos";
+import { signOut } from "next-auth/client";
 
 export default function Home(props) {
 	const [isLoading, setIsLoading] = useState(true);
@@ -43,6 +44,17 @@ export default function Home(props) {
 				<div className="columns">
 					<div className="column is-12">
 						<Todos todos={todos} nextAuthURL={nextAuthURL} />
+					</div>
+				</div>
+				<div className="columns">
+					<div className="footer column is-12">
+						<div className="logout">
+							<div className="button-container">
+								<button className="button" onClick={() => signOut()}>
+									Sign out
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

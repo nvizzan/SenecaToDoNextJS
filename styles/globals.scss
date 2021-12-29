@@ -36,6 +36,17 @@ a {
 }
 
 .error {
+	margin-top: 10px;
 	margin-bottom: 20px;
-	color: #f53131;
+	color: #e35151;
+}
+
+.logout {
+	display: flex;
+	justify-content: center;
+	background: no-repeat;
+}
+
+.footer {
+	background: none !important;
 }
