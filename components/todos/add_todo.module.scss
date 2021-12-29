@@ -1,0 +1,12 @@
+.form_inner {
+	display: flex;
+	padding-top: 20px;
+
+	.input {
+		max-width: 350px;
+	}
+
+	.button {
+		border-radius: 0px !important;
+	}
+}

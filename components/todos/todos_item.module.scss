@@ -1,0 +1,35 @@
+.todo_item {
+	opacity: 1;
+	display: flex;
+	align-items: center;
+	padding: 10px;
+	border-bottom: 1px dashed #cfcfcf;
+	position: relative;
+
+	&:last-child {
+		//border-bottom: none !important;
+	}
+
+	.todo_item_checkbox {
+		opacity: 1;
+		margin-right: 20px;
+	}
+
+	.todo_item_description {
+		opacity: 1;
+	}
+
+	.todo_item_remove {
+		cursor: pointer;
+		position: absolute;
+		right: 20px;
+
+		path {
+			//fill: #f14767 !important;
+		}
+	}
+}
+
+.completed {
+	text-decoration: line-through;
+}
