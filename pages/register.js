@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import LoginForm from "../components/auth/login-form";
+import RegisterForm from "../components/auth/register-form"; 
 import { getSession, getCsrfToken } from "next-auth/client";
 import ReactBody from 'react-body';
 
-const Login = ({ csrfToken }) => { 
+const Register = ({ csrfToken }) => { 
     const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
  
@@ -33,18 +33,19 @@ const Login = ({ csrfToken }) => {
 
     return (
         <>
-            <ReactBody className="page-login" />
-            <LoginForm csrfToken={csrfToken} /> 
+            <ReactBody className="page-register" />
+            <RegisterForm csrfToken={csrfToken} nextAuthURL={process.env.NEXTAUTH_URL} />
         </>
-    )
+    ) 
 }
 
 export async function getServerSideProps(context) {
   return {
     props: {
       csrfToken: await getCsrfToken(context),
+      NEXTAUTH_URL: process.env.NEXTAUTH_URL 
     },
   }
 }
 
-export default Login;
+export default Register;

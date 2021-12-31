@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 	if (req.method === "POST") {
 		let todoURL = `${backendURL}/task`;
 		let token = getAccessToken(req);
-		let body = JSON.stringify(req.body);
+		let body = JSON.stringify(req.body); 
 
 		if (!token) return res.status(400).json({ errorMsg: "Bad Request" });
 

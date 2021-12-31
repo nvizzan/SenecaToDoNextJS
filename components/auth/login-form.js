@@ -3,10 +3,11 @@ import { useRouter } from 'next/router';
 import { signIn, useSession } from 'next-auth/client';
 import { Form, Formik } from 'formik'; 
 import * as Yup from 'yup'; 
+import Link from 'next/link';
 import MyTextInput from '../form/text-input';
 import styles from './login-form.module.scss'; 
 
-const LoginForm = () => {
+const LoginForm = ({csrfToken}) => {
   const [isLoginStarted, setIsLoginStarted] = useState(false);
   const [loginError, setLoginError] = useState(false);
 
@@ -58,7 +59,7 @@ const LoginForm = () => {
           }} 
         >
           <Form>
-            <div className={`${styles.login__box} box`}>
+            <div className={`${styles.login__box} box`} style={{position: 'relative'}}>
               <MyTextInput 
                 label="Email"
                 name="email"
@@ -78,8 +79,11 @@ const LoginForm = () => {
               <button type="submit"  disabled={isLoginStarted} className={`${styles.login__button} button is-primary`}>
                 {isLoginStarted ?  'Logging in ...' : 'Login' }
               </button>
+              <div className="register-link">
+                <Link href="/register">Register</Link>
+              </div>
             </div>
-          </Form>
+            </Form>
         </Formik>
       </>
   ) 

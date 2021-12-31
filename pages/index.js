@@ -66,7 +66,7 @@ export async function getServerSideProps(ctx) {
 	const session = await getSession(ctx);
 	let SENECA_backend_url = process.env.SENECA_BACKEND_URL;
 
-	//console.log("session static here: ", session);
+	console.log("session static here: ", session);
 
 	if (!session) {
 		return {
@@ -80,7 +80,7 @@ export async function getServerSideProps(ctx) {
 	let toDoRawResponse = null;
 	let toDoResponse = null;
 
-	//console.log("fetching user data here");
+  console.log("fetching user data here");
 	console.log("access token: ", accessToken);
 
 	//fetching user data
@@ -98,7 +98,7 @@ export async function getServerSideProps(ctx) {
 
 			let todos = [];
 
-			if (toDoResponse.count) {
+			if (toDoResponse.data.length) {
 				todos = toDoResponse.data;
 			}
 

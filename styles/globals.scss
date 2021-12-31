@@ -47,6 +47,17 @@ a {
 	background: no-repeat;
 }
 
+.register-link {
+  position: absolute;
+  right: 35px;
+  bottom: 37px;
+  border-bottom: 1px dashed black;
+
+  a {
+    font-weight: bold;
+  }
+}
+
 .footer {
 	background: none !important;
 }

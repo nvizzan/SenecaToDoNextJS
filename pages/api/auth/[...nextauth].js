@@ -26,9 +26,14 @@ const providers = [
 
 				console.log("response: ", response);
 
-				if (response.status == 400) {
+        if(response.status == 500) {
+          errorMessage = "Unable to access the server, please contact admin.";
+					throw new Error(errorMessage); 
+        }
+
+				if (response.status == 400 || response.status == 401) {
 					errorMessage = "Invalid Username or Password.";
-					throw new Error(errorMessage);
+					throw new Error(errorMessage); 
 				}
 
 				//console.log('response: ', response);
@@ -94,7 +99,7 @@ const callbacks = {
 
 		//console.log('Token : ', token);
 		//console.log('Token accessToken: ', token.accessToken);
-		return token;
+		return token; 
 	},
 
 	async session(session, token) {
